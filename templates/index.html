@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <title>Text to speech</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100 grad">
+    <div class="body container ">
+        <div class="container d-flex flex-row justify-content-center top">
+            <section id="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="text-white">Text to speech converter</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <main class="">
+            <div class="d-flex flex-row justify-content-center mb-5 gap-5">
+                <img class="voice" src="{% static 'img/sound-recognition.png' %}" alt="">
+                {% csrf_token %}
+                <div class="form-group rounded shadow-lg p-5">
+                    <h3 class="text-white">Record your voice:</h3>
+                    <label for="inputText1"></label>
+                    <button id="captureBtn" class="form-control">Capture audio</button>
+                </div>
+                <div class="form-group rounded shadow-lg p-5">
+                    <h3 class="text-white">Enter audio file:</h3>
+                    <label for="inputText1"></label>
+                    <input type="file" class="form-control" id="audiofile">
+                    <button type="submit" id="captureBtn2" class="btn btn-dark mt-3">Convert to text</button>
+                </div>
+            </div>
+            <section id="output" class="container rounded shadow-lg h2"">
+
+            </section>
+        </main>
+    </div>
+    <footer class="mt-auto container text-center">
+        <h1>Final project @2024</h1>
+    </footer>
+
+    <script src="{% static 'js/audio.js' %}"></script>
+    <script src="{% static 'js/audio2.js' %}"></script>
+</body>
+
+</html>
